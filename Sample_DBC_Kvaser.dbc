@@ -1,0 +1,52 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ABS Instrumentcluster ECM Gateway
+
+
+BO_ 300 ABS_WheelSpeed: 8 ABS
+ SG_ FrontWheelSpeed : 5|14@0+ (0.112,0) [0|255] "km/h"  ECM,Gateway
+ SG_ RearLeftWheelSpeed : 21|14@0+ (0.112,0) [0|255] "km/h"  ECM,Gateway
+
+BO_ 100 Engine_Control: 8 ECM
+ SG_ RPM : 15|16@0+ (1,0) [0|65535] "rpm"  Gateway,Instrumentcluster,ABS
+
+BO_ 98 Ignition_State: 8 Instrumentcluster
+ SG_ Ignition_Status : 7|4@0+ (1,0) [0|0] ""  ABS,ECM,Gateway,Instrumentcluster
+
+
+
+CM_ BU_ Gateway "Gateway is responsible for sending from CAN1 to CAN2";
+
