@@ -68,7 +68,7 @@ class ECM_Node(BaseNode):
         # Sends RPM
         ttk.Label(self, text="RPM:").grid(row=0, column=0)
         self.rpm_var = tk.IntVar(value=1000)
-        self.rpm_scale = tk.Scale(self, from_=0, to=8000, orient="horizontal", variable=self.rpm_var, command=self.update_rpm_label)
+        self.rpm_scale = tk.Scale(self, from_=0, to=65535, orient="horizontal", variable=self.rpm_var, command=self.update_rpm_label)
         self.rpm_scale.grid(row=0, column=1)
         self.rpm_label_val = ttk.Label(self, text="1000")
         self.rpm_label_val.grid(row=0, column=2)
